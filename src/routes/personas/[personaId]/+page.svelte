@@ -54,7 +54,10 @@
             <h1 class="font-semibold text-[26px]">Modify Persona</h1>
             <div class="flex flex-col gap-2">
                 <p class="text-lg">System prompt for this persona</p>
-                <input class="border-2 border-gray-400 rounded-md h-10 pl-2 w-full h-40 flex items-start" type="text" value={tempPersonas.find(persona => persona.name === activePersona)?.prompt}>
+                <textarea
+                        value={tempPersonas.find(persona => persona.name === activePersona)?.prompt}
+                        class="border-2 border-gray-400 rounded-md p-2 w-full h-40 resize-none"
+                ></textarea>
             </div>
         </div>
         <div class="flex flex-wrap gap-10">
