@@ -54,11 +54,14 @@
         <div class="flex items-center justify-center w-full h-full">
             <div class="flex w-full h-full gap-14">
                 <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
-                    <div class="flex-grow">
-                        <p>Upload</p>
+                    <div class="flex-grow flex items-center">
+                        <div class="custom-dashed-border py-[15%] mx-[15%] w-full flex flex-col items-center">
+                            <p class="text-3xl">Upload files here</p>
+                            <p>.eml .docx .ppt .pdf</p>
+                        </div>
                     </div>
                     <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400">
-                        <p class="py-5 px-7">Start new proposal</p>
+                        <p class="py-5 px-6">Start new proposal</p>
                     </a>
                 </div>
                 <div class="flex flex-col w-full h-full gap-14">
@@ -66,11 +69,21 @@
 
                     </div>
                     <div class="flex w-full h-full gap-14">
-                        <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl">
+                        <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
+                            <div class="flex-grow flex items-center">
 
+                            </div>
+                            <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400">
+                                <p class="py-5 px-6">View proposal repository</p>
+                            </a>
                         </div>
-                        <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl">
+                        <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
+                            <div class="flex-grow flex items-center">
 
+                            </div>
+                            <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400">
+                                <p class="py-5 px-6">View/modify personas</p>
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -78,3 +91,17 @@
         </div>
     </div>
 </div>
+
+<style>
+    .custom-dashed-border {
+        border-style: dashed;
+        border-width: 2px;
+        border-color: #9CA3AF;  /* This is equivalent to Tailwind's gray-400 */
+        border-dash: 30px;  /* Length of each dash */
+        border-gap: 10px;  /* Gap between dashes */
+    }
+
+    p {
+        color: #707070;
+    }
+</style>
