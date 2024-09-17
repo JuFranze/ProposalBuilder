@@ -5,6 +5,21 @@
     let allOrRecentItems = tempPersonas
 
     let activePersona = 'Marine Insurance'
+    $: allOrRecentItems = allOrRecentTab === 'all'
+        ? tempPersonas
+        : shuffleArray([...tempPersonas]);
+
+    $: if (allOrRecentTab) {
+        activePersona = allOrRecentItems[0].name
+    }
+
+    function shuffleArray(array) {
+        for (let i = array.length - 1; i > 0; i--) {
+            const j = Math.floor(Math.random() * (i + 1));
+            [array[i], array[j]] = [array[j], array[i]];
+        }
+        return array;
+    }
 </script>
 
 <div class="pt-[80px] w-full h-full flex gap-6">
