@@ -51,7 +51,7 @@
     import { uploadedFiles } from '$lib/store/fileStore.js';
 
     export let multiple = true;
-    export let accept = ".eml,.docx,.ppt,.pdf";
+    export let accept = ".pdf,.csv,.txt,.xlsx,.doc,.docx,.ppt,.pptx,.eml";
 
     let fileInput;
     let dragOver = false;
@@ -143,7 +143,7 @@
                             <div class="flex-grow flex items-center">
 
                             </div>
-                            <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400">
+                            <a href="/personas" class="w-full h-fit border-t-2 border-t-gray-400">
                                 <p class="py-5 px-6">View/modify personas</p>
                             </a>
                         </div>
