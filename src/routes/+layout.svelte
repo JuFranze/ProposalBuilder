@@ -1,3 +1,7 @@
+<svelte:head>
+    <title>Proposal Builder</title>
+</svelte:head>
+
 <script>
     import "../app.css";
 </script>
