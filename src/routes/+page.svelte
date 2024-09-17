@@ -47,15 +47,14 @@
 
     initializeMsal(); // Call initialization on component load
 
-    import { createEventDispatcher } from 'svelte';
+    import { goto } from '$app/navigation';
+    import { uploadedFiles } from '$lib/store/fileStore.js';
 
-    export let multiple = false;
-    export let accept = "*";
+    export let multiple = true;
+    export let accept = ".eml,.docx,.ppt,.pdf";
 
     let fileInput;
     let dragOver = false;
-
-    const dispatch = createEventDispatcher();
 
     function handleClick() {
         fileInput.click();
@@ -64,7 +63,7 @@
     function handleFileChange(event) {
         const files = event.target.files;
         if (files && files.length > 0) {
-            dispatch('filesSelected', { files });
+            handleFiles(files);
         }
     }
 
@@ -82,8 +81,17 @@
         dragOver = false;
         const files = event.dataTransfer?.files;
         if (files && files.length > 0) {
-            dispatch('filesSelected', { files });
+            handleFiles(files);
         }
+    }
+
+    function handleFiles(files) {
+        // Convert FileList to Array and add to store
+        const fileArray = Array.from(files);
+        uploadedFiles.addFiles(fileArray);
+
+        // Navigate to /new/
+        goto('/new/');
     }
 </script>
 
