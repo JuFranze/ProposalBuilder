@@ -100,7 +100,7 @@
         <h1 class="-mt-5 font-semibold text-[36px]">Welcome</h1>
         <div class="flex items-center justify-center w-full h-full">
             <div class="flex w-full h-full gap-14">
-                <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
+                <div class=" bg-[#E6F0E5] w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
                     <div class="flex-grow flex items-center">
                         <div
                                 class="custom-dashed-border py-[15%] mx-[15%] w-full flex flex-col items-center cursor-pointer transition-colors duration-300 ease-in-out"
@@ -122,28 +122,28 @@
                             />
                         </div>
                     </div>
-                    <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400">
+                    <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400 bg-white rounded-b-2xl">
                         <p class="py-5 px-6">Start new proposal</p>
                     </a>
                 </div>
                 <div class="flex flex-col w-full h-full gap-14">
-                    <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl">
+                    <div class=" bg-[#E6F0E5] w-full h-full border-2 border-gray-400 rounded-2xl">
 
                     </div>
                     <div class="flex w-full h-full gap-14">
-                        <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
+                        <div class=" bg-[#E6F0E5] w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
                             <div class="flex-grow flex items-center">
 
                             </div>
-                            <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400">
+                            <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400 bg-white rounded-b-2xl">
                                 <p class="py-5 px-6">View proposal repository</p>
                             </a>
                         </div>
-                        <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
+                        <div class=" bg-[#E6F0E5] w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
                             <div class="flex-grow flex items-center">
 
                             </div>
-                            <a href="/personas" class="w-full h-fit border-t-2 border-t-gray-400">
+                            <a href="/personas" class="w-full h-fit border-t-2 border-t-gray-400 bg-white rounded-b-2xl">
                                 <p class="py-5 px-6">View/modify personas</p>
                             </a>
                         </div>
