@@ -46,6 +46,45 @@
     }
 
     initializeMsal(); // Call initialization on component load
+
+    import { createEventDispatcher } from 'svelte';
+
+    export let multiple = false;
+    export let accept = "*";
+
+    let fileInput;
+    let dragOver = false;
+
+    const dispatch = createEventDispatcher();
+
+    function handleClick() {
+        fileInput.click();
+    }
+
+    function handleFileChange(event) {
+        const files = event.target.files;
+        if (files && files.length > 0) {
+            dispatch('filesSelected', { files });
+        }
+    }
+
+    function handleDragOver(event) {
+        event.preventDefault();
+        dragOver = true;
+    }
+
+    function handleDragLeave() {
+        dragOver = false;
+    }
+
+    function handleDrop(event) {
+        event.preventDefault();
+        dragOver = false;
+        const files = event.dataTransfer?.files;
+        if (files && files.length > 0) {
+            dispatch('filesSelected', { files });
+        }
+    }
 </script>
 
 <div class="w-full h-full custom-gradient-bg">
@@ -55,9 +94,24 @@
             <div class="flex w-full h-full gap-14">
                 <div class="bg-white w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
                     <div class="flex-grow flex items-center">
-                        <div class="custom-dashed-border py-[15%] mx-[15%] w-full flex flex-col items-center">
-                            <p class="text-3xl">Upload files here</p>
+                        <div
+                                class="custom-dashed-border py-[15%] mx-[15%] w-full flex flex-col items-center cursor-pointer transition-colors duration-300 ease-in-out"
+                                class:bg-blue-100={dragOver}
+                                on:click={handleClick}
+                                on:dragover={handleDragOver}
+                                on:dragleave={handleDragLeave}
+                                on:drop={handleDrop}
+                        >
+                            <p class="text-3xl mb-2">Upload files here</p>
                             <p>.eml .docx .ppt .pdf</p>
+                            <input
+                                    type="file"
+                                    class="hidden"
+                                    bind:this={fileInput}
+                                    on:change={handleFileChange}
+                                    {multiple}
+                                    {accept}
+                            />
                         </div>
                     </div>
                     <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400">
