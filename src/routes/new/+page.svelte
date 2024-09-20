@@ -12,15 +12,15 @@
     }
 
     const fileTypeImages = {
-        '.pdf': 'pdf.png',
-        '.csv': 'csv.png',
-        '.txt': 'txt.png',
-        '.xlsx': 'xlsx.png',
-        '.doc': 'doc.png',
-        '.docx': 'doc.png',
-        '.ppt': 'ppt.png',
-        '.pptx': "ppt.png",
-        default: 'unknown.png'
+        '.xlsx': 'xlsx.svg',
+        '.csv': 'xlsx.svg',
+        '.txt': 'txt.svg',
+        '.doc': 'doc.svg',
+        '.docx': 'doc.svg',
+        '.ppt': 'ppt.svg',
+        '.pptx': "ppt.svg",
+        '.pdf': 'pdf.svg',
+        default: 'unknown.svg'
     };
 
     function getFileImage(fileName) {
