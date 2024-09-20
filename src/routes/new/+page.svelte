@@ -70,13 +70,7 @@
     }
 </script>
 
-<div class="pt-[80px] w-full h-full flex gap-6">
-    <div class="w-[115px] h-full">
-
-    </div>
-    <div class="w-[40%] h-full rounded-2xl bg-blue-100">
-
-    </div>
+<div class="w-full h-full flex gap-6 mx-[10%]">
     <div class="w-full h-full rounded-2xl bg-white py-14 px-8 justify-between flex flex-col">
         <div class="flex flex-col">
             <h1 class="font-semibold text-[26px]">Your Request Files</h1>
@@ -115,7 +109,10 @@
             <div class="flex flex-wrap gap-10">
                 <div class="flex flex-col gap-2">
                     <p class="text-lg">Upload Company Logo <span class="text-red-600">*</span></p>
-                    <input class="border-2 border-gray-400 rounded-md w-60 h-10 pl-2">
+                    <div class="flex items-center gap-2">
+                        <input class="border-2 border-gray-400 rounded-md w-60 h-10 pl-2">
+                        <button class="border-2 border-gray-400 rounded-md h-10 px-2">Browse</button>
+                    </div>
                 </div>
                 <div class="flex flex-col gap-2">
                     <p class="text-lg">Company Website URL <span class="text-red-600">*</span></p>
