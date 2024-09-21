@@ -5,7 +5,7 @@
 </script>
 
 <div class="w-full h-full flex gap-6 mx-[10%]">
-    <div class="w-full h-full rounded-2xl flex flex-col gap-10">
+    <div class="w-full h-full flex flex-col gap-10">
         <h1 class="font-semibold text-[36px]">Manage Personas</h1>
         <div class="overflow-x-auto">
             <table class="w-full">
@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                 {#each tempPersonas as persona}
-                    <tr class="font-[450] text-lg border-b border-gray-200 hover:bg-[#EBEBEB]" on:click={() => goto(`/personas/${persona.name}`)}>
+                    <tr class="font-[450] text-lg border-b border-gray-200 hover:bg-[#EBEBEB] cursor-pointer" on:click={() => goto(`/personas/${persona.name}`)}>
                         <td class="flex items-center gap-5 pr-6 py-4">
                             <img src="/logo.png" alt="Persona logo" class="h-10 w-10 ml-2">
                             {persona.name}

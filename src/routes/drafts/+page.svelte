@@ -34,7 +34,7 @@
 </script>
 
 <div class="w-full h-full flex gap-6 mx-[10%]">
-    <div class="w-full h-full rounded-2xl flex flex-col gap-10">
+    <div class="w-full h-full flex flex-col gap-10">
         <h1 class="font-semibold text-[36px]">All Saved Drafts</h1>
         <div class="overflow-x-auto">
             <table class="w-full">

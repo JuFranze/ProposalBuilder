@@ -70,7 +70,7 @@
 </script>
 
 <div class="w-full h-full flex gap-6 mx-[10%]">
-    <div class="w-full h-full rounded-2xl bg-white py-14 px-8 justify-between flex flex-col pane-shadow">
+    <div class="w-full h-full rounded-t-2xl bg-white py-14 px-8 justify-between flex flex-col pane-shadow">
         <div class="flex flex-col">
             <h1 class="font-semibold text-[26px]">Your Request Files</h1>
             <ul class="flex items-center flex-wrap">
