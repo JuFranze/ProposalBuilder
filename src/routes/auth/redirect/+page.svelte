@@ -7,7 +7,7 @@
         const msalInstance = await initializeMsal();
         try {
             await msalInstance.handleRedirectPromise();
-            goto('/');
+            await goto('/');
         } catch (error) {
             console.error('Error handling redirect:', error);
             // Handle error appropriately
