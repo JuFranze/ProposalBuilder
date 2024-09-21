@@ -18,7 +18,7 @@
                 </thead>
                 <tbody>
                 {#each tempPersonas as persona}
-                    <tr class="font-[450] text-lg border-b border-gray-200 hover:bg-[#EBEBEB] cursor-pointer" on:click={() => goto(`/personas/${persona.name}`)}>
+                    <tr class="font-[450] text-lg border-b border-gray-200 hover:bg-[#EBEBEB] cursor-pointer" on:click={() => goto(`/personas/${persona.id}`)}>
                         <td class="flex items-center gap-5 pr-6 py-4">
                             <img src="/logo.png" alt="Persona logo" class="h-10 w-10 ml-2">
                             {persona.name}

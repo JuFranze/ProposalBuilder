@@ -1,10 +1,12 @@
 <script>
     import {tempPersonas} from "$lib/personas.js";
+    import {goto} from "$app/navigation";
+    import {page} from "$app/stores";
 
     let allOrRecentTab = 'all'
     let allOrRecentItems = tempPersonas
 
-    let activePersona = 'Marine Insurance'
+    $: activePersona = $page.params.personaId;
 </script>
 
 <div class="w-full h-full flex gap-6">
@@ -17,8 +19,8 @@
             </div>
             <div class="flex flex-col gap-3">
                 {#each allOrRecentItems as persona}
-                    <button on:click={() => activePersona = persona.name} class="w-full flex p-4 gap-4 rounded-lg transition-colors cursor-pointer relative items-center hover:bg-white {activePersona === persona.name ? 'bg-white' : ''}">
-                        {#if activePersona === persona.name}
+                    <button on:click={() => goto(`/personas/${persona.id}`)} class="w-full flex p-4 gap-4 rounded-lg transition-colors cursor-pointer relative items-center hover:bg-white {activePersona === persona.id ? 'bg-white' : ''}">
+                        {#if activePersona === persona.id}
                             <div class="absolute -ml-4 h-[50%] rounded-lg bg-gr w-[3px] bg-green-500 transition-colors"></div>
                         {/if}
                         <img src="/logo.png" class="h-12 w-12 ml-2">
