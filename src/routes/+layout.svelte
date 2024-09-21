@@ -4,36 +4,30 @@
 
 <script>
     import "../app.css";
-    import { page } from "$app/stores";
-    import { onMount } from 'svelte';
-    import { initializeMsal } from '$lib/auth';
-    import { writable } from "svelte/store";
 
-    const user = writable(null);
+    import { onMount } from 'svelte';
+    import { initializeMsal, handleRedirectPromise } from '$lib/auth';
+    import { user, setUser, clearUser } from '$lib/store/userStore';
 
     onMount(async () => {
-        const msalInstance = await initializeMsal();
-        await handleRedirect(msalInstance);
-    });
-
-    async function handleRedirect(msalInstance) {
         try {
-            const response = await msalInstance.handleRedirectPromise();
+            const response = await handleRedirectPromise();
             if (response) {
-                user.set(response.account);
+                setUser(response.account);
             } else {
+                const msalInstance = await initializeMsal();
                 const currentAccounts = msalInstance.getAllAccounts();
-                if (currentAccounts.length === 1) {
-                    user.set(currentAccounts[0]);
+                if (currentAccounts.length > 0) {
+                    setUser(currentAccounts[0]);
                 } else {
-                    user.set(null);
+                    clearUser();
                 }
             }
         } catch (error) {
-            console.error('Error during redirect handling:', error);
-            user.set(null);
+            console.error('Error handling redirect:', error);
+            clearUser();
         }
-    }
+    });
 
     async function signIn() {
         const msalInstance = await initializeMsal();
@@ -45,22 +39,15 @@
     async function signOut() {
         const msalInstance = await initializeMsal();
         await msalInstance.logoutRedirect();
-        user.set(null);
+        clearUser();
     }
-
-    let userData;
-    user.subscribe(value => {
-        userData = value;
-    });
 </script>
 
-{#if $page.url.pathname !== '/auth/redirect'}
-    {#if userData}
-        <p>Welcome, {userData.name} ({userData.username})</p>
-        <button on:click={signOut}>Sign Out</button>
-    {:else}
-        <button on:click={signIn}>Sign In with Microsoft Account</button>
-    {/if}
+{#if $user}
+    <p>Welcome, {$user.name} ({$user.username})</p>
+    <button on:click={signOut}>Sign Out</button>
+{:else}
+    <button on:click={signIn}>Sign In with Microsoft Account</button>
 {/if}
 
 <div class="w-screen h-screen flex flex-col custom-gradient-bg">
