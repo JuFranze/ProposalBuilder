@@ -7,6 +7,8 @@
     let allOrRecentItems = tempPersonas
 
     $: activePersona = $page.params.personaId;
+
+    $: persona = tempPersonas.find(p => p.id === activePersona)
 </script>
 
 <div class="w-full h-full flex gap-6">
@@ -37,7 +39,7 @@
         <h1 class="font-semibold text-[26px]">Modify Persona</h1>
         <div class="flex flex-col gap-2">
             <p class="text-lg">System prompt for this persona</p>
-            <input class="border-2 border-gray-400 rounded-md pl-2 w-full h-48 flex items-start" type="text">
+            <textarea class="border-2 border-gray-400 rounded-md px-4 py-3 text-lg  w-full h-48 flex items-start" type="text">{persona.prompt}</textarea>
         </div>
         <div class="flex flex-wrap gap-10">
             <div class="flex flex-col gap-2 w-full">
