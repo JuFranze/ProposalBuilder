@@ -62,7 +62,7 @@
         </div>
         <div class="flex mt-auto ml-auto gap-5">
             <button class="border-2 bg-[#87C591] rounded-xl py-1 px-14 text-white text-lg mt-auto">Save</button>
-            <button class="border-2 border-gray-400 rounded-xl py-1 px-6 text-gray-600 text-lg">Cancel</button>
+            <button class="border-2 border-gray-400 rounded-xl py-1 px-6 text-gray-500 text-lg">Cancel</button>
         </div>
     </div>
 </div>

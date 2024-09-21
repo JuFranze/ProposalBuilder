@@ -95,12 +95,12 @@
     }
 </script>
 
-<div class="w-full h-full custom-gradient-bg">
-    <div class="h-[100%] mx-[13%] py-[11%] flex flex-col gap-5">
-        <h1 class="-mt-5 font-semibold text-[36px]">Welcome</h1>
-        <div class="flex items-center justify-center w-full h-full">
-            <div class="flex w-full h-full gap-14">
-                <div class=" bg-[#E6F0E5] w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
+<div class="w-full h-[100%] custom-gradient-bg">
+    <div class="h-full mx-[13%] flex flex-col pt-[1%] pb-[15%] gap-[5%]">
+        <h1 class="font-semibold text-[36px]">Welcome, [name]!</h1>
+        <div class="flex items-center justify-center w-full h-[90%]">
+            <div class="flex w-full h-full gap-6">
+                <div class=" bg-[#E6F0E5] w-full h-full pane-shadow rounded-2xl flex flex-col">
                     <div class="flex-grow flex items-center">
                         <div
                                 class="custom-dashed-border py-[15%] mx-[15%] w-full flex flex-col items-center cursor-pointer transition-colors duration-300 ease-in-out"
@@ -123,28 +123,41 @@
                         </div>
                     </div>
                     <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400 bg-white rounded-b-2xl">
-                        <p class="py-5 px-6">Start new proposal</p>
+                        <div class="py-5 px-6">
+                            <p class="font-bold">Start new proposal</p>
+                            <p class="">Upload all of the background request materials to begin.</p>
+                        </div>
                     </a>
                 </div>
-                <div class="flex flex-col w-full h-full gap-14">
-                    <div class=" bg-[#E6F0E5] w-full h-full border-2 border-gray-400 rounded-2xl">
-
+                <div class="flex flex-col w-full h-full gap-5">
+                    <div class=" bg-[#E6F0E5] w-full h-full rounded-2xl flex flex-col pane-shadow">
+                        <div class="flex-grow flex items-center px-[5%] py-[3%] gap-5">
+                            {#each [1, 2, 3, 4] as item}
+                                <div class="bg-white w-full h-full border-[1px] border-gray-400"></div>
+                            {/each}
+                        </div>
+                        <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400 bg-white rounded-b-2xl">
+                            <div class="flex px-6 items-center justify-between py-5">
+                                <p class="font-bold">Continue from draft</p>
+                                <p>See all drafts</p>
+                            </div>
+                        </a>
                     </div>
-                    <div class="flex w-full h-full gap-14">
-                        <div class=" bg-[#E6F0E5] w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
+                    <div class="flex w-full h-full gap-6">
+                        <div class=" bg-[#E6F0E5] w-full h-full pane-shadow rounded-2xl flex flex-col">
                             <div class="flex-grow flex items-center">
 
                             </div>
                             <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400 bg-white rounded-b-2xl">
-                                <p class="py-5 px-6">View proposal repository</p>
+                                <p class="py-5 px-6 font-bold">View proposal repository</p>
                             </a>
                         </div>
-                        <div class=" bg-[#E6F0E5] w-full h-full border-2 border-gray-400 rounded-2xl flex flex-col">
+                        <div class=" bg-[#E6F0E5] w-full h-full pane-shadow rounded-2xl flex flex-col">
                             <div class="flex-grow flex items-center">
 
                             </div>
                             <a href="/personas" class="w-full h-fit border-t-2 border-t-gray-400 bg-white rounded-b-2xl">
-                                <p class="py-5 px-6">View/modify personas</p>
+                                <p class="py-5 px-6 font-bold">View/modify personas</p>
                             </a>
                         </div>
                     </div>

@@ -5,4 +5,8 @@
     p {
         @apply text-gray-500;
     }
+
+    .pane-shadow {
+        @apply shadow-[0_4px_6px_-1px_rgba(0,0,0,0.3),0_2px_4px_-2px_rgba(0,0,0,0.3)]
+    }
 }
