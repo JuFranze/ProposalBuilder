@@ -1,6 +1,7 @@
 <script>
 
     import {tempPersonas} from "$lib/personas.js";
+    import {goto} from "$app/navigation";
 </script>
 
 <div class="w-full h-full flex gap-6 mx-[10%]">
@@ -17,7 +18,7 @@
                 </thead>
                 <tbody>
                 {#each tempPersonas as persona}
-                    <tr class="font-[450] text-lg border-b border-gray-200 hover:bg-[#EBEBEB]">
+                    <tr class="font-[450] text-lg border-b border-gray-200 hover:bg-[#EBEBEB]" on:click={() => goto(`/personas/${persona.name}`)}>
                         <td class="flex items-center gap-5 pr-6 py-4">
                             <img src="/logo.png" alt="Persona logo" class="h-10 w-10 ml-2">
                             {persona.name}

@@ -7,11 +7,8 @@
     let activePersona = 'Marine Insurance'
 </script>
 
-<div class="pt-[80px] w-full h-full flex gap-6">
-    <div class="w-[115px] h-full">
-
-    </div>
-    <div class="w-[40%] h-full rounded-2xl bg-blue-100 pt-5">
+<div class="w-full h-full flex gap-6">
+    <div class="w-[40%] h-full rounded-2xl bg-blue-300 bg-opacity-10 pt-5 ml-10">
         <h1 class="semibold text-[26px] pb-5 border-b-2 border-b-gray-400 pl-6">Personas</h1>
         <div class="flex flex-col p-6 gap-5">
             <div class="flex gap-10">
@@ -34,29 +31,17 @@
             </div>
         </div>
     </div>
-    <div class="w-full h-full rounded-2xl bg-white py-14 px-8 gap-10 flex flex-col">
-        <div>
-            <h1 class="font-semibold text-[26px]">Modify Persona</h1>
-            <div class="flex flex-col gap-2">
-                <p class="text-lg">System prompt for this persona</p>
-                <input class="border-2 border-gray-400 rounded-md h-10 pl-2 w-full h-40 flex items-start" type="text">
-            </div>
+    <div class="w-full h-full rounded-2xl bg-white py-14 px-8 gap-10 flex flex-col pane-shadow">
+        <h1 class="font-semibold text-[26px]">Modify Persona</h1>
+        <div class="flex flex-col gap-2">
+            <p class="text-lg">System prompt for this persona</p>
+            <input class="border-2 border-gray-400 rounded-md pl-2 w-full h-48 flex items-start" type="text">
         </div>
         <div class="flex flex-wrap gap-10">
             <div class="flex flex-col gap-2 w-full">
-                <div class="flex w-full gap-8">
-                    <div class="w-full flex flex-col gap-3">
-                        <p class="text-lg">Reference files</p>
-                        <div class="h-20 w-full border-2 border-gray-400 rounded-3xl">
+                <div class="w-full flex flex-col gap-3">
+                    <p class="text-lg">Reference files</p>
 
-                        </div>
-                    </div>
-                    <div class="w-full flex flex-col gap-3">
-                        <p class="text-lg">Reference files</p>
-                        <div class="h-20 w-full border-2 border-gray-400 rounded-3xl">
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
