@@ -41,14 +41,14 @@
             <p class="text-lg">System prompt for this persona</p>
             <textarea class="border-2 border-gray-400 rounded-md px-4 py-3 text-lg  w-full h-48 flex items-start" type="text">{persona.prompt}</textarea>
         </div>
-        <div class="flex flex-wrap gap-10">
-            <div class="flex flex-col gap-2 w-full">
-                <div class="w-full flex flex-col gap-3">
-                    <p class="text-lg">Reference files</p>
+<!--        <div class="flex flex-wrap gap-10">-->
+<!--            <div class="flex flex-col gap-2 w-full">-->
+<!--                <div class="w-full flex flex-col gap-3">-->
+<!--                    <p class="text-lg">Reference files</p>-->
 
-                </div>
-            </div>
-        </div>
+<!--                </div>-->
+<!--            </div>-->
+<!--        </div>-->
         <div class="flex mt-auto ml-auto gap-5">
             <button class="border-2 bg-[#87C591] rounded-xl py-1 px-14 text-white text-lg mt-auto">Save</button>
             <button class="border-2 border-gray-400 rounded-xl py-1 px-6 text-gray-500 text-lg">Cancel</button>
