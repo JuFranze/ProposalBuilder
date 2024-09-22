@@ -7,5 +7,6 @@ export async function POST({request}) {
 }
 
 export async function GET({request}) {
-
+    const personas = await PersonaModel.find({}).sort({lastModified: -1}).lean();
+    return json(personas)
 }
