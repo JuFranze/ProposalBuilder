@@ -41,14 +41,20 @@
         await msalInstance.logoutRedirect();
         clearUser();
     }
+
+    const tempUser = {
+        name: "Stephen Rhodes",
+        email: "sterhodes@microsoft.com",
+        pfp: "https://i.pinimg.com/474x/81/8a/1b/818a1b89a57c2ee0fb7619b95e11aebd.jpg"
+    }
 </script>
 
-{#if $user}
-    <p>Welcome, {$user.name} ({$user.username})</p>
-    <button on:click={signOut}>Sign Out</button>
-{:else}
-    <button on:click={signIn}>Sign In with Microsoft Account</button>
-{/if}
+<!--{#if $user}-->
+<!--    <p>Welcome, {$user.name} ({$user.username})</p>-->
+<!--    <button on:click={signOut}>Sign Out</button>-->
+<!--{:else}-->
+<!--    <button on:click={signIn}>Sign In with Microsoft Account</button>-->
+<!--{/if}-->
 
 <div class="w-screen h-screen flex flex-col custom-gradient-bg">
     <div class="px-7 h-[75px] flex items-center justify-between">
@@ -56,6 +62,13 @@
             <img src="logo.png" alt="Logo" class="w-8 h-8">
             <p class="text-2xl font-[475]">Proposal Builder</p>
         </a>
+        <div class="flex items-center gap-3">
+            <div class="flex flex-col text-2xl items-end">
+                <p class="text-lg font-[500]">{tempUser.name}</p>
+                <p class="text-[16px] font-[400] -mt-2.5">{tempUser.email}</p>
+            </div>
+            <img src={tempUser.pfp} alt="Profile picture" class="w-10 h-10 rounded-full">
+        </div>
     </div>
     <div class="flex h-full">
         <div class="h-full pl-7 flex flex-col pt-[1%] gap-10">
