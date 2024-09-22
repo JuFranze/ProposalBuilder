@@ -1,4 +1,6 @@
 <script>
+    import {user} from "$lib/store/userStore.js";
+
     const msalConfig = {
         auth: {
             clientId: "b0524871-78ca-4941-8525-095e8de7b08f",
