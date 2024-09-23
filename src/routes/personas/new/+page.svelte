@@ -1,10 +1,11 @@
 <script>
-    import {goto} from "$app/navigation";
+    import {user} from "$lib/store/userStore.js";
 
     const newPersona = {
         name: '',
         lastModified: '',
-        prompt: ''
+        prompt: '',
+        userId: $user.idTokenClaims.sub
     }
 
     async function createPersona() {
