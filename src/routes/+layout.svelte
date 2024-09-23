@@ -5,26 +5,26 @@
 <script>
     import "../app.css";
 
-    import { onMount } from 'svelte';
-    import { initializeMsal, handleRedirectPromise } from '$lib/auth';
-    import { user, setUser, clearUser } from '$lib/store/userStore';
+    import {onMount} from 'svelte';
+    import {initializeMsal, handleRedirectPromise} from '$lib/auth';
+    import {user, setUser, clearUser} from '$lib/store/userStore';
 
     onMount(async () => {
         try {
-            const response = await handleRedirectPromise();
-            if (response) {
-                setUser(response.account);
+            // Handle any potential redirect first
+            await handleRedirectPromise();
+
+            // Check for existing accounts and automatically login if any
+            const msalInstance = await initializeMsal();
+            const currentAccounts = msalInstance.getAllAccounts();
+            if (currentAccounts.length > 0) {
+                setUser(currentAccounts[0]);
             } else {
-                const msalInstance = await initializeMsal();
-                const currentAccounts = msalInstance.getAllAccounts();
-                if (currentAccounts.length > 0) {
-                    setUser(currentAccounts[0]);
-                } else {
-                    clearUser();
-                }
+                // No accounts found, proceed as usual (optional button)
+                clearUser();
             }
         } catch (error) {
-            console.error('Error handling redirect:', error);
+            console.error('Error handling redirect or login:', error);
             clearUser();
         }
     });
@@ -49,30 +49,29 @@
     }
 </script>
 
-<!--{#if $user}-->
-<!--    <p>Welcome, {$user.name} ({$user.username})</p>-->
-<!--    <button on:click={signOut}>Sign Out</button>-->
-<!--{:else}-->
-<!--    <button on:click={signIn}>Sign In with Microsoft Account</button>-->
-<!--{/if}-->
-
 <div class="w-screen h-screen flex flex-col custom-gradient-bg">
     <div class="px-7 h-[75px] flex items-center justify-between">
         <a href="/" class="flex items-center gap-3">
             <img src="logo.png" alt="Logo" class="w-8 h-8">
             <p class="text-2xl font-[475]">Proposal Builder</p>
         </a>
-        <div class="flex items-center gap-3">
-            <div class="flex flex-col text-2xl items-end">
-                <p class="text-lg font-[500]">{tempUser.name}</p>
-                <p class="text-[16px] font-[400] -mt-2.5">{tempUser.email}</p>
+        {#if $user}
+            <div class="flex items-center gap-3">
+                <div class="flex flex-col text-2xl items-end">
+                    <p class="text-lg font-[500]">{$user.name}</p>
+                    <p class="text-[16px] font-[400] -mt-2.5">{$user.username}</p>
+                </div>
+                <img src={tempUser.pfp} alt="Profile picture" class="w-10 h-10 rounded-full">
             </div>
-            <img src={tempUser.pfp} alt="Profile picture" class="w-10 h-10 rounded-full">
-        </div>
+        {:else}
+            <button on:click={signIn} class="ml-auto border-2 border-green-500 rounded-full py-1 px-8 text-green-600 text-lg whitespace-nowrap">Sign in</button>
+        {/if}
     </div>
     <div class="flex h-full">
         <div class="h-full pl-7 flex flex-col pt-[1%] gap-10">
-            <a href="/new" class="ml-auto border-2 border-green-500 rounded-full py-1 px-8 text-green-600 text-lg whitespace-nowrap">+ Create new</a>
+            <a href="/new"
+               class="ml-auto border-2 border-green-500 rounded-full py-1 px-8 text-green-600 text-lg whitespace-nowrap">+
+                Create new</a>
             <div class="flex flex-col gap-6 text-xl font-[500] pl-1.5">
                 <a href="/drafts" class="flex gap-4 items-center">
                     <img src="/icon/paperclip.svg" alt="Drafts" class="w-6 h-6 mt-0.5">
@@ -92,7 +91,7 @@
                 </a>
             </div>
         </div>
-        <slot />
+        <slot/>
     </div>
 </div>
 

@@ -99,7 +99,7 @@
 
 <div class="w-full h-[100%] custom-gradient-bg">
     <div class="h-full mx-[13%] flex flex-col pt-[1%] pb-[15%] gap-[5%]">
-        <h1 class="font-semibold text-[36px]">Welcome, [name]!</h1>
+        <h1 class="font-semibold text-[36px]">Welcome{$user ? ', ' + $user.name + '!' : '!'}</h1>
         <div class="flex items-center justify-center w-full h-[90%]">
             <div class="flex w-full h-full gap-6">
                 <div class=" bg-[#E6F0E5] w-full h-full pane-shadow rounded-2xl flex flex-col">
