@@ -35,12 +35,12 @@
 
 <div class="w-full h-full flex gap-6 mx-[10%]">
     <div class="w-full h-full flex flex-col gap-10">
-        <h1 class="font-semibold text-[36px]">All Saved Drafts</h1>
+        <h1 class="font-semibold text-[36px]">All In-Progress Proposals</h1>
         <div class="overflow-x-auto">
             <table class="w-full">
                 <thead>
                 <tr class="text-lg font-semibold">
-                    <th class="text-left pr-6 py-3">Draft Name</th>
+                    <th class="text-left pr-6 py-3">Proposal Name</th>
                     <th class="text-left px-6 py-3">Last Modified</th>
                     <th class="text-left pl-6 py-3">Prompt</th>
                 </tr>

@@ -73,9 +73,9 @@
                class="ml-auto border-2 border-green-500 rounded-full py-1 px-8 text-green-600 text-lg whitespace-nowrap">+
                 Create new</a>
             <div class="flex flex-col gap-6 text-xl font-[500] pl-1.5">
-                <a href="/drafts" class="flex gap-4 items-center">
+                <a href="/in-progress" class="flex gap-4 items-center">
                     <img src="/icon/paperclip.svg" alt="Drafts" class="w-6 h-6 mt-0.5">
-                    <p>Drafts</p>
+                    <p>In-Progress</p>
                 </a>
                 <a href="/proposals" class="flex gap-4 items-center">
                     <img src="/icon/book.svg" alt="Proposals" class="w-6 h-6 mt-0.5">

@@ -140,8 +140,8 @@
                         </div>
                         <a href="/new" class="w-full h-fit border-t-2 border-t-gray-400 bg-white rounded-b-2xl">
                             <div class="flex px-6 items-center justify-between py-5">
-                                <p class="font-bold">Continue from draft</p>
-                                <p>See all drafts</p>
+                                <p class="font-bold">Continue from in-progress proposals</p>
+                                <p>See all</p>
                             </div>
                         </a>
                     </div>
